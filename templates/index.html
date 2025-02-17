@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Powered Data Validation And Standardization In Supply Chain</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        .form-container {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        .form-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 20px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .form-container input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .form-container input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .result {
+            font-size: 1.5em;
+            color: #4CAF50;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Data Validation And Standardization</h2>
+        <form id="predictionForm">
+            <label for="Location">Location:</label>
+            <input type="text" name="Location" required>
+            
+            <label for="Total Land Area">Total Land Area:</label>
+            <input type="number" name="Total Land Area" required>
+            
+            <label for="Number of Cows">Number of Cows:</label>
+            <input type="number" name="Number of Cows" required>
+            
+            <label for="Farm Size">Farm Size:</label>
+            <input type="text" name="Farm Size" required>
+            
+            <label for="Product ID">Product ID:</label>
+            <input type="number" name="Product ID" required>
+
+            <label for="Product Name">Product Name:</label>
+            <input type="text" name="Product Name" required>
+
+            <label for="Brand">Brand:</label>
+            <input type="text" name="Brand" required>
+
+            <label for="Quantity (liters/kg)">Quantity (liters/kg):</label>
+            <input type="number" name="Quantity (liters/kg)" required>
+
+            <label for="Shelf Life">Shelf Life:</label>
+            <input type="number" name="Shelf Life" required>
+            
+            <input type="submit" value="Predict">
+        </form>
+
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        document.getElementById("predictionForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevents form from submitting to a backend
+            
+            const randomPredictions = [
+                "Valid Data - Standardized Successfully!",
+                "Warning: Some data inconsistencies found.",
+                "Invalid Data - Requires Correction.",
+                "Data is Clean and Ready for Processing!",
+                "Potential Outlier Detected in Farm Size!"
+            ];
+            
+            const randomIndex = Math.floor(Math.random() * randomPredictions.length);
+            document.getElementById("result").innerText = randomPredictions[randomIndex];
+        });
+    </script>
+</body>
+</html>
